@@ -49,6 +49,9 @@ while true ; do
 		for _metric in $(ls -1 /sys/kernel/debug/ieee80211/*/netdev:${_interface}/../statistics/) ; do
 			echo -e "PUTVAL ${_HOSTNAME}/${_PLUGIN}-${_interface}/counter-$(echo ${_metric}) ${_start_time}:$(cat /sys/kernel/debug/ieee80211/*/netdev:${_interface}/../statistics/${_metric})"
 		done
+
+		# nuke the temp file
+		rm -f /var/run/${_start_time}_${_interface}
 	done
 
 	# now calculate sleep time
