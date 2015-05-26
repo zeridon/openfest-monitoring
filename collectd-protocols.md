@@ -1,6 +1,8 @@
 collectd plain text protocol
 ============================
 
+Full protocol spec: https://collectd.org/wiki/index.php/Plain_text_protocol
+
 We are interested in submitting data (either to local or remote collectd)
 
 PUTVAL <Identifier> [<OptionList>] Valuelist
