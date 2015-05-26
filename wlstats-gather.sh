@@ -55,6 +55,6 @@ while true ; do
 	done
 
 	# now calculate sleep time
-	_end_time=$(date +%s.%N)
+	_end_time=$(date +%s)
 	sleep $(echo ${_PERIOD} ${_end_time} ${_start_time} | awk '{print $1 - $2 + $3 }')
 done
